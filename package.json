@@ -28,7 +28,7 @@
     "axios": "^1.6.8",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.6"
+    "rxjs": "^7.1.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.3.2",
