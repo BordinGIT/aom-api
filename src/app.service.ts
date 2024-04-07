@@ -91,6 +91,19 @@ export class AppService {
     return named;
   }
 
+  async Summary(citizenId: string, deviceId: string, pin: string) {
+    let gsbSession = new GSB({
+      citizenId: citizenId,
+      deviceId: deviceId,
+      pin: pin,
+    });
+
+    let login = await gsbSession.login();
+    let accounts = await gsbSession.getAccount();
+
+    return accounts;
+  }
+
   async Transfer(
     citizenId: string,
     deviceId: string,

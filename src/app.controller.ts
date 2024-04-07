@@ -10,6 +10,13 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  @Get('summary')
+  async Summary(@Body() body) {
+    // console.log(body);
+
+    const { citizenId, deviceId, pin } = body;
+    return this.appService.Summary(citizenId, deviceId, pin);
+  }
   @Post('otp/get')
   async OTPGet(@Body() body) {
     const { citizenId, phone, pin } = body;
@@ -34,7 +41,7 @@ export class AppController {
 
   @Post('checkname')
   async Checkname(@Headers() header, @Body() body) {
-    console.log(body);
+    //console.log(body);
     console.log(header);
     const { citizenId, deviceId, pin, accountTo, bankCode, amount } = body;
     return this.appService.Checkname(
@@ -49,7 +56,7 @@ export class AppController {
 
   @Post('transfer')
   async Transfer(@Body() body) {
-    console.log(body);
+    //console.log(body);
 
     const { citizenId, deviceId, pin, accountTo, bankCode, amount } = body;
     return this.appService.Transfer(
